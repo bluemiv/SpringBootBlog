@@ -16,9 +16,25 @@ export default function Header() {
         <Link href={ROUTE_PATH.ROOT} className="cursor-pointer font-semibold italic text-lg">
           {process.env.NEXT_PUBLIC_APP_TITLE}
         </Link>
-        <div className="flex items-center gap-3">
-          <ThemeButton />
-          <HamburgerButton isOpen={isOpen} onClick={toggleMenu} />
+        <div className="flex-1 flex items-center justify-end gap-8">
+          <nav>
+            <ul className="flex items-center gap-4">
+              {[
+                { href: ROUTE_PATH.ABOUT, label: 'About' },
+                { href: ROUTE_PATH.POSTS, label: 'Posts' },
+              ].map((v) => (
+                <li key={v.label}>
+                  <Link href={v.href} className="italic font-semibold">
+                    {v.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <div className="flex items-center gap-4">
+            <ThemeButton />
+            <HamburgerButton isOpen={isOpen} onClick={toggleMenu} />
+          </div>
         </div>
       </div>
     </header>

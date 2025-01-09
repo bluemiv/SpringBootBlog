@@ -37,7 +37,7 @@ export default function ThemeButton() {
     }, 150);
   };
 
-  if (theme === null) return null;
+  if (theme === null) return <div className="w-9 h-9" />;
   return (
     <button
       onClick={toggleTheme}
