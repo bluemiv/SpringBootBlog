@@ -16,7 +16,7 @@ export default function Header() {
         <Link href={ROUTE_PATH.ROOT} className="cursor-pointer font-semibold italic text-lg">
           {process.env.NEXT_PUBLIC_APP_TITLE}
         </Link>
-        <div className="flex items-center">
+        <div className="flex items-center gap-3">
           <ThemeButton />
           <HamburgerButton isOpen={isOpen} onClick={toggleMenu} />
         </div>

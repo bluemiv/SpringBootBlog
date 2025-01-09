@@ -39,6 +39,20 @@ export default {
           dark: 'var(--color-secondary-dark)',
         },
       },
+      keyframes: {
+        'icon-fade-in': {
+          from: { opacity: '0', transform: 'translate(45%, 40%) rotate(45deg)' },
+          to: { opacity: '1', transform: 'rotate(0deg)' },
+        },
+        'icon-fade-out': {
+          from: { opacity: '1', transform: 'rotate(0deg)' },
+          to: { opacity: '0', transform: 'translate(-45%, 40%) rotate(-45deg)' },
+        },
+      },
+      animation: {
+        'icon-fade-in': 'icon-fade-in 0.15s ease-in-out',
+        'icon-fade-out': 'icon-fade-out 0.15s ease-in-out',
+      },
     },
   },
   plugins: [],
