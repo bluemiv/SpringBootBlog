@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { ROUTE_PATH } from '@/constants/route';
 import HamburgerButton from '@/components/HamburgerButton';
+import ThemeButton from '@/components/ThemeButton';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -15,7 +16,8 @@ export default function Header() {
         <Link href={ROUTE_PATH.ROOT} className="cursor-pointer">
           {process.env.NEXT_PUBLIC_APP_TITLE}
         </Link>
-        <div className="">
+        <div className="flex items-center">
+          <ThemeButton />
           <HamburgerButton isOpen={isOpen} onClick={toggleMenu} />
         </div>
       </div>
