@@ -61,3 +61,8 @@
     --color-secondary-light: #E0E0E0;
     --color-secondary-dark: #616161;
 }
+
+body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
