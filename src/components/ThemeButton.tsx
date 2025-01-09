@@ -43,11 +43,9 @@ export default function ThemeButton() {
       onClick={toggleTheme}
       className="rounded-full hover:bg-background-secondary w-9 h-9 flex items-center justify-center "
     >
-      {theme === 'dark' ? (
-        <Icons.SunIcon className={isFadeOut ? 'animate-icon-fade-out' : 'animate-icon-fade-in'} />
-      ) : (
-        <Icons.MoonIcon className={isFadeOut ? 'animate-icon-fade-out' : 'animate-icon-fade-in'} />
-      )}
+      <div className={isFadeOut ? 'animate-icon-fade-out' : 'animate-icon-fade-in'}>
+        {theme === 'dark' ? <Icons.SunIcon /> : <Icons.MoonIcon />}
+      </div>
     </button>
   );
 }
