@@ -19,9 +19,11 @@ export default function ReadingProgressIndicator() {
   }, []);
 
   return (
-    <div
-      className="fixed top-0 left-0 w-full h-[4px] bg-primary duration-300 ease-in-out"
-      style={{ width: `${progress}%` }}
-    ></div>
+    <div className="w-full h-[4px] bg-background-primary">
+      <div
+        className="h-full bg-primary duration-300 ease-in-out"
+        style={{ width: `${progress}%` }}
+      />
+    </div>
   );
 }

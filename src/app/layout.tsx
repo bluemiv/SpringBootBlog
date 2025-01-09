@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import localFont from 'next/font/local';
 import ReadingProgressIndicator from '@/components/ReadingProgressIndicator';
+import Header from '@/components/Header';
 
 const pretendardFont = localFont({
   src: './fonts/PretendardVariable.woff2',
@@ -23,7 +24,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${pretendardFont.className} antialiased h-[500vh]`}>
-        <ReadingProgressIndicator />
+        <div className="sticky top-0 left-0 w-full z-10">
+          <ReadingProgressIndicator />
+          <Header />
+        </div>
         {children}
       </body>
     </html>
