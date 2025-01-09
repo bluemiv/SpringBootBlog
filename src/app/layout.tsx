@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import localFont from 'next/font/local';
+import ReadingProgressIndicator from '@/components/ReadingProgressIndicator';
 
 const pretendardFont = localFont({
   src: './fonts/PretendardVariable.woff2',
@@ -21,7 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${pretendardFont.className} antialiased`}>{children}</body>
+      <body className={`${pretendardFont.className} antialiased h-[500vh]`}>
+        <ReadingProgressIndicator />
+        {children}
+      </body>
     </html>
   );
 }
