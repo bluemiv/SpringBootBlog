@@ -1,4 +1,5 @@
 import { PropsWithClassName } from '@/types/base';
+import Button from '@/components/Button';
 
 interface Props {
   isOpen: boolean;
@@ -7,24 +8,22 @@ interface Props {
 
 export default function HamburgerButton({ isOpen, onClick }: PropsWithClassName<Props>) {
   return (
-    <button
-      className="flex flex-col items-center justify-center space-y-[0.25rem] w-5 h-[2rem] focus:outline-none"
-      onClick={onClick}
-      aria-label="Toggle Menu"
-    >
-      <span
-        className={`h-[0.12rem] w-full bg-text-primary rounded transition-transform ${
-          isOpen ? 'rotate-45 translate-y-[0.37rem]' : ''
-        }`}
-      />
-      <span
-        className={`h-[0.12rem] w-full bg-text-primary rounded transition-opacity ${isOpen ? 'opacity-0' : ''}`}
-      />
-      <span
-        className={`h-[0.12rem] w-full bg-text-primary rounded transition-transform ${
-          isOpen ? '-rotate-45 -translate-y-[0.37rem]' : ''
-        }`}
-      />
-    </button>
+    <Button shape="circle" className="hover:bg-background-secondary sm:hidden" onClick={onClick}>
+      <div className="flex flex-col items-center justify-center w-full h-full gap-[3px]">
+        <div
+          className={`h-[3px] w-5 bg-text-primary rounded transition-transform ${
+            isOpen ? 'rotate-45 translate-y-[6px]' : ''
+          }`}
+        />
+        <div
+          className={`h-[3px] w-5 bg-text-primary rounded transition-opacity ${isOpen ? 'opacity-0' : ''}`}
+        />
+        <div
+          className={`h-[3px] w-5 bg-text-primary rounded transition-transform ${
+            isOpen ? '-rotate-45 -translate-y-[6px]' : ''
+          }`}
+        />
+      </div>
+    </Button>
   );
 }

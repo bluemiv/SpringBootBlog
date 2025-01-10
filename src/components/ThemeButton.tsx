@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useCookies } from 'react-cookie';
 import Icons from '@/components/Icons';
+import Button from '@/components/Button';
 
 export default function ThemeButton() {
   const [cookies, setCookie] = useCookies(['theme']);
@@ -39,13 +40,10 @@ export default function ThemeButton() {
 
   if (theme === null) return <div className="w-9 h-9" />;
   return (
-    <button
-      onClick={toggleTheme}
-      className="rounded-full hover:bg-background-secondary w-9 h-9 flex items-center justify-center "
-    >
+    <Button shape="circle" className="hover:bg-background-secondary" onClick={toggleTheme}>
       <div className={isFadeOut ? 'animate-icon-fade-out' : 'animate-icon-fade-in'}>
         {theme === 'dark' ? <Icons.SunIcon /> : <Icons.MoonIcon />}
       </div>
-    </button>
+    </Button>
   );
 }

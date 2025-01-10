@@ -9,6 +9,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontSize: {
+        desktop: '16px',
+        mobile: '14px',
+      },
       colors: {
         text: {
           primary: 'var(--text-primary)',
