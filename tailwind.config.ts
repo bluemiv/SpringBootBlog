@@ -21,7 +21,7 @@ export default {
           error: 'var(--text-error)',
           highlight: 'var(--text-highlight)',
         },
-        background: {
+        bg: {
           primary: 'var(--bg-primary)',
           secondary: 'var(--bg-secondary)',
           accent: 'var(--bg-accent)',

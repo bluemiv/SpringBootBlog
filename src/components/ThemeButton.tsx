@@ -40,7 +40,7 @@ export default function ThemeButton() {
 
   if (theme === null) return <div className="w-9 h-9" />;
   return (
-    <Button shape="circle" className="hover:bg-background-secondary" onClick={toggleTheme}>
+    <Button shape="circle" className="hover:bg-bg-secondary" onClick={toggleTheme}>
       <div className={isFadeOut ? 'animate-icon-fade-out' : 'animate-icon-fade-in'}>
         {theme === 'dark' ? <Icons.SunIcon /> : <Icons.MoonIcon />}
       </div>
