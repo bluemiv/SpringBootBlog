@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import clsx from 'clsx';
 import { ROUTE_PATH } from '@/constants/route';
-import HamburgerButton from '@/components/HamburgerButton';
-import ThemeButton from '@/components/ThemeButton';
+import HamburgerButton from '@/feature/layout/components/HamburgerButton';
+import ThemeButton from '@/feature/layout/components/ThemeButton';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -44,7 +44,7 @@ export default function Header() {
             >
               {[
                 { href: ROUTE_PATH.ABOUT, label: 'About' },
-                { href: ROUTE_PATH.POSTS, label: 'Posts' },
+                { href: ROUTE_PATH.BLOG, label: 'Blog' },
               ].map((v) => (
                 <li key={v.label}>
                   <Link href={v.href} className="italic font-semibold">

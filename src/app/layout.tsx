@@ -4,8 +4,8 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import { cookies } from 'next/headers';
 import { isNil } from 'lodash';
-import ReadingProgressIndicator from '@/components/ReadingProgressIndicator';
-import Header from '@/components/Header';
+import ReadingProgressIndicator from '@/feature/layout/components/ReadingProgressIndicator';
+import Header from '@/feature/layout/components/Header';
 
 const pretendardFont = localFont({
   src: './fonts/PretendardVariable.woff2',
