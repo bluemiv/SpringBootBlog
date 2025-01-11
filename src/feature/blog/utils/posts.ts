@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const postsDirectory = path.join(process.cwd(), 'src', 'posts');
+const postsDirectory = path.join(process.cwd(), 'src', '_posts');
 
 export function getAllPosts() {
   const categories = fs.readdirSync(postsDirectory);

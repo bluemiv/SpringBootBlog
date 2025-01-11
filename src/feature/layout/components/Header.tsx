@@ -26,7 +26,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="flex justify-center py-3 px-8 w-full h-16 bg-bg-primary sm:bg-transparent sm:bg-gradient-to-b sm:from-bg-primary sm:from-40% sm:to-transparent">
+    <header className="flex justify-center px-6 sm:px-8 w-full h-[50px] sm:h-[60px] bg-bg-primary sm:bg-transparent sm:bg-gradient-to-b sm:from-bg-primary sm:from-40% sm:to-transparent">
       <div className="max-w-[1200px] w-full h-full flex items-center justify-between">
         <Link href={ROUTE_PATH.ROOT} className="cursor-pointer font-semibold italic text-lg">
           {process.env.NEXT_PUBLIC_APP_TITLE}
