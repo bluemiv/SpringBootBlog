@@ -9,10 +9,10 @@ export default async function Page(props: Props) {
   const { category, slug } = params;
   const { default: Article } = await import(`@/_posts/${category}/${slug}.mdx`);
   return (
-    <div className="max-w-[1100px] w-full flex flex-col-reverse sm:flex-row">
-      <div className="max-w-[800px] w-full p-4">
+    <div className="mx-auto max-w-[1100px] w-full flex flex-col-reverse sm:flex-row">
+      <main className="max-w-[800px] w-full p-4">
         <Article />
-      </div>
+      </main>
       <div className="w-full sm:max-w-[300px] p-4">
         <div className="w-full h-auto sm:sticky sm:right-0 sm:top-[60px]">table of content</div>
       </div>
