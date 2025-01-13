@@ -1,5 +1,5 @@
 import createMDX from '@next/mdx';
-import moonLightTheme from './assets/moonLight-ii.json' assert { type: 'json' };
+import moonLightTheme from './assets/moonLight-ii.json' with { type: 'json' };
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
