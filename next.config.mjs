@@ -1,5 +1,5 @@
 import createMDX from '@next/mdx';
-import moonLightTheme from './assets/moonLight-ii.json' with { type: 'json' };
+import moonLightTheme from './assets/moonlight-ii.json' with { type: 'json' };
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -17,6 +17,7 @@ const nextConfig = {
 /** @type {import('rehype-pretty-code').Options} */
 const prettyCodeOptions = {
   theme: moonLightTheme,
+  keepBackground: false,
 };
 
 const withMDX = createMDX({
