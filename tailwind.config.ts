@@ -18,6 +18,7 @@ export default {
         md: 'var(--spacing-md)',
         lg: 'var(--spacing-lg)',
         xl: 'var(--spacing-xl)',
+        '2xl': 'var(--spacing-2xl)',
       },
       fontSize: {
         desktop: '16px',

@@ -8,6 +8,7 @@
   --spacing-md: 1rem;
   --spacing-lg: 1.5rem;
   --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
 
   /* text */
   --text-default: #2d2d2d;
@@ -16,13 +17,13 @@
   --text-disabled: #bbbbbb;
 
   /* background */
-  --bg-default: #ffffff; /* 기본 */
-  --bg-primary: #f3f4f6; /* 주요 */
-  --bg-secondary: #e5e7eb; /* 보조 */
-  --bg-hover: #e5e7eb; /* Hover */
-  --bg-active: #d1d5db; /* Active */
-  --bg-disabled: #f9fafb; /* 비활성 */
-  --bg-overlay: rgba(0, 0, 0, 0.5); /* 오버레이 */
+  --bg-default: #f9fafb;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f3f4f6;
+  --bg-hover: #e5e7eb;
+  --bg-active: #d1d5db;
+  --bg-disabled: #e4e4e7;
+  --bg-overlay: rgba(0, 0, 0, 0.2);
 
   /* primary color */
   --primary-50: #eff6ff;
@@ -47,6 +48,8 @@
   --secondary-700: #374151;
   --secondary-800: #1f2937;
   --secondary-900: #111827;
+
+  --shiki-dark-bg: #1f2028;
 }
 
 :root.dark {
@@ -57,13 +60,13 @@
   --text-disabled: #777777;
 
   /* background (dark theme) */
-  --bg-default: #1f2937;
-  --bg-primary: #111827;
-  --bg-secondary: #374151;
-  --bg-hover: #4b5563;
-  --bg-active: #6b7280;
-  --bg-disabled: #374151;
-  --bg-overlay: rgba(255, 255, 255, 0.2);
+  --bg-default: #121923;
+  --bg-primary: #0d1117;
+  --bg-secondary: #1c2531;
+  --bg-hover: #29323e;
+  --bg-active: #3a4753;
+  --bg-disabled: #1c2531;
+  --bg-overlay: rgba(0, 0, 0, 0.6);
 
   /* primary color (dark theme) */
   --primary-50: #0a0f1a;
@@ -92,4 +95,74 @@
 
 body {
   @apply text-text bg-bg;
+}
+
+/* code highlight */
+pre {
+  @apply overflow-x-auto;
+  @apply px-0 py-md rounded-lg;
+}
+pre [data-line] {
+  @apply px-md py-xs;
+}
+p > code {
+  color: #c8d3f5;
+}
+p > code,
+span[data-rehype-pretty-code-figure] code {
+  @apply rounded p-xs;
+  background-color: #1f2028;
+}
+code[data-line-numbers] {
+  counter-reset: line;
+}
+code[data-line-numbers] > [data-line]::before {
+  counter-increment: line;
+  content: counter(line);
+  @apply inline-block w-md mr-md text-right text-gray-500;
+}
+pre [data-line] {
+  @apply px-4 border-l-2 border-l-transparent;
+}
+
+[data-highlighted-line] {
+  background: rgba(200, 200, 255, 0.1);
+  @apply border-l-blue-400;
+}
+
+[data-highlighted-chars] {
+  @apply bg-zinc-600/50 rounded;
+  box-shadow: 0 0 0 4px rgb(82 82 91 / 0.5);
+}
+
+[data-chars-id] {
+  @apply shadow-none p-1 border-b-2;
+}
+
+[data-chars-id] span {
+  @apply !text-inherit;
+}
+
+[data-chars-id='v'] {
+  @apply !text-pink-300 bg-rose-800/50 border-b-pink-600 font-bold;
+}
+
+[data-chars-id='s'] {
+  @apply !text-yellow-300 bg-yellow-800/50 border-b-yellow-600 font-bold;
+}
+
+[data-chars-id='i'] {
+  @apply !text-purple-200 bg-purple-800/50 border-b-purple-600 font-bold;
+}
+
+[data-rehype-pretty-code-title] {
+  @apply bg-zinc-700 text-zinc-200 rounded-t-lg py-2 px-3 font-semibold text-sm;
+}
+
+figure[data-rehype-pretty-code-figure]:has(> [data-rehype-pretty-code-title]) pre {
+  @apply !rounded-t-none;
+}
+
+figure {
+  @apply mb-6 mt-1;
 }
