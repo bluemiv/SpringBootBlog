@@ -8,7 +8,7 @@ interface Props {
 
 export default function HamburgerButton({ isOpen, onClick }: PropsWithClassName<Props>) {
   return (
-    <Button shape="circle" className="hover:bg-bg-secondary sm:hidden" onClick={onClick}>
+    <Button shape="circle" className="hover:bg-bg-secondary md:hidden" onClick={onClick}>
       <div className="flex flex-col items-center justify-center w-full h-full gap-[3px]">
         <div
           className={`h-[3px] w-5 bg-text-primary rounded transition-transform ${

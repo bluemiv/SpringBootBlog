@@ -36,7 +36,7 @@ export default async function RootLayout({
       suppressHydrationWarning={isNotSettingTheme}
     >
       <body
-        className={`${pretendardFont.className} antialiased h-[500vh] text-mobile sm:text-desktop`}
+        className={`${pretendardFont.className} antialiased h-[500vh] text-mobile md:text-desktop`}
       >
         {isNotSettingTheme && (
           <script

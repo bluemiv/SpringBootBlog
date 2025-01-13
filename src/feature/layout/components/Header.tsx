@@ -14,7 +14,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 640) {
+      if (window.innerWidth >= 768) {
         setIsOpen(false);
       }
     };
@@ -26,7 +26,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="flex justify-center px-6 sm:px-8 w-full h-[50px] sm:h-[60px] bg-bg-primary sm:bg-transparent sm:bg-gradient-to-b sm:from-bg-primary sm:from-40% sm:to-transparent">
+    <header className="flex justify-center px-lg w-full h-header bg-bg md:bg-transparent md:bg-gradient-to-b md:from-bg md:from-40% md:to-transparent">
       <div className="max-w-[1200px] w-full h-full flex items-center justify-between">
         <Link href={ROUTE_PATH.ROOT} className="cursor-pointer font-semibold italic text-lg">
           {process.env.NEXT_PUBLIC_APP_TITLE}
@@ -36,10 +36,10 @@ export default function Header() {
             <ul
               className={clsx(
                 {
-                  'right-0 h-full p-10 bg-bg-primary/80 backdrop-blur-sm': isOpen,
+                  'right-0 h-full p-10 bg-bg': isOpen,
                   'right-[-200vw]': !isOpen,
                 },
-                'w-[100vw] top-16 fixed flex flex-col items-end transition-all ease-in-out duration-150 h-full sm:w-full sm:static sm:flex-row sm:items-center gap-6',
+                'w-[100vw] top-header fixed flex flex-col items-end transition-all ease-in-out duration-150 h-full md:w-full md:static md:flex-row md:items-center gap-lg',
               )}
             >
               {[
@@ -54,7 +54,7 @@ export default function Header() {
               ))}
             </ul>
           </nav>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-sm">
             <ThemeButton />
             <HamburgerButton isOpen={isOpen} onClick={toggleMenu} />
           </div>

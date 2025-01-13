@@ -7,8 +7,6 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     h2: ({ children }) => (
       <h2 className="font-bold text-3xl mt-10 mb-7 text-text-accent">{children}</h2>
     ),
-    // h3: ({ children }) => <h3 className="font-bold">{children}</h3>,
-    // h4: ({ children }) => <h4 className="font-bold text-sm">{children}</h4>,
     strong: ({ children }) => <strong className="font-bold text-text-accent">{children}</strong>,
     p: ({ children }) => {
       if (typeof children === 'object') {
