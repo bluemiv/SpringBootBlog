@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+import typography from '@tailwindcss/typography';
 
 export default {
   darkMode: 'class',
@@ -16,6 +17,7 @@ export default {
           disabled: 'var(--text-disabled)',
           error: 'var(--text-error)',
           highlight: 'var(--text-highlight)',
+          accent: 'var(--text-accent)',
         },
         bg: {
           primary: 'var(--bg-primary)',
@@ -55,5 +57,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [typography],
 } satisfies Config;

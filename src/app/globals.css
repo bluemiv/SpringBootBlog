@@ -9,6 +9,7 @@
     --text-disabled: #BDBDBD;
     --text-error: #D32F2F;
     --text-highlight: #1E88E5;
+    --text-accent: #000000;
 
     /* background */
     --bg-primary: #ffffff;
@@ -39,6 +40,7 @@
     --text-disabled: #616161;
     --text-error: #ef5350;
     --text-highlight: #90caf9;
+    --text-accent: #ffffff;
 
     /* background (dark theme) */
     --bg-primary: #121212;
