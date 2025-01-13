@@ -36,7 +36,7 @@ export default function Header() {
             <ul
               className={clsx(
                 {
-                  'right-0 h-full p-10 bg-bg': isOpen,
+                  'right-0 h-full p-xl bg-bg': isOpen,
                   'right-[-200vw]': !isOpen,
                 },
                 'w-[100vw] top-header fixed flex flex-col items-end transition-all ease-in-out duration-150 h-full md:w-full md:static md:flex-row md:items-center gap-lg',

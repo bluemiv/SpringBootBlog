@@ -13,8 +13,8 @@ export default async function Page(props: Props) {
       <main className="max-w-[800px] w-full p-md">
         <Article />
       </main>
-      <div className="w-full md:max-w-[300px] p-4">
-        <div className="w-full h-auto md:sticky md:right-0 md:top-[60px]">table of content</div>
+      <div className="w-full md:max-w-[300px] p-md">
+        <div className="w-full h-auto md:sticky md:right-0 md:top-header">table of content</div>
       </div>
     </div>
   );
