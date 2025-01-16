@@ -26,7 +26,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="flex justify-center px-lg w-full h-header bg-bg md:bg-transparent md:bg-gradient-to-b md:from-bg md:from-40% md:to-transparent">
+    <header className="flex justify-center px-lg w-full h-header bg-bg border-b border-b-bg-secondary">
       <div className="max-w-[1200px] w-full h-full flex items-center justify-between">
         <Link href={ROUTE_PATH.ROOT} className="cursor-pointer font-semibold italic text-lg">
           {process.env.NEXT_PUBLIC_APP_TITLE}
@@ -44,7 +44,7 @@ export default function Header() {
             >
               {[
                 { href: ROUTE_PATH.ABOUT, label: 'About' },
-                { href: ROUTE_PATH.BLOG, label: 'Blog' },
+                { href: ROUTE_PATH.POSTS, label: 'Posts' },
               ].map((v) => (
                 <li key={v.label}>
                   <Link href={v.href} className="italic font-semibold">
