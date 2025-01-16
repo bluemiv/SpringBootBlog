@@ -1,0 +1,139 @@
+---
+title: 'React란 무엇인가?'
+description: 'React의 개념, 특징, 장점, 단점을 알아보고, 실제 사용 사례와 간단한 코드 예시를 통해 React의 기본 원리를 이해합니다.'
+date: '2024-02-19T00:34:15'
+lastModifiedAt: '2024-02-19T00:34:15'
+tags: ['react']
+draft: false
+image: 'https://github.com/user-attachments/assets/e6ae8968-f24a-4eaa-8176-c8c6a364da8d'
+---
+
+## React란 무엇인가?
+
+`React`는 페이스북(현 메타)에서 개발한 사용자 인터페이스(UI)를 구축하기 위한 JavaScript 라이브러리입니다. React는 컴포넌트 기반 아키텍처를 사용하여 재사용 가능한 UI 요소를 설계하고, 동적이고 반응적인 웹 애플리케이션을 쉽게 개발할 수 있도록 설계되었습니다.
+
+React는 다음과 같은 철학에 기반합니다:
+
+1. 선언적 프로그래밍(declarative programming)
+   UI의 상태를 선언적으로 기술하여, DOM 조작과 같은 세부적인 작업을 개발자가 직접 처리하지 않아도 됩니다.
+
+2. 컴포넌트 기반 아키텍처
+   애플리케이션을 작은 컴포넌트로 나누어 재사용성과 유지보수성을 극대화합니다.
+
+3. 단방향 데이터 흐름(one-way data flow)
+   데이터가 부모에서 자식으로 흐르며, 애플리케이션 상태를 예측 가능하게 유지합니다.
+
+---
+
+## React의 주요 특징
+
+### 1. 가상 DOM(Virtual DOM)
+`React`는 실제 DOM 대신 메모리에 가상 DOM을 유지하며, 상태 변화가 발생할 때 변경 사항을 효율적으로 계산한 후 실제 DOM에 최소한의 업데이트를 수행합니다.
+
+```javascript
+const rootElement = document.getElementById('root');
+const element = <h1>Hello, React!</h1>;
+
+ReactDOM.render(element, rootElement);
+```
+
+위 코드에서 `ReactDOM.render`는 가상 DOM에서 계산된 변경 사항만 실제 DOM에 반영합니다.
+
+### 2. JSX(JavaScript XML)
+`JSX`는 JavaScript 코드 안에서 HTML 같은 구조를 작성할 수 있는 문법입니다. 다음은 JSX의 간단한 예시입니다:
+
+```javascript
+const Greeting = () => {
+  return <h1>안녕하세요, 사용자님!</h1>;
+};
+```
+
+### 3. 컴포넌트 기반 구조
+React의 애플리케이션은 독립적이고 재사용 가능한 컴포넌트로 구성됩니다. 컴포넌트는 함수형(`functional component`)과 클래스형(`class component`)으로 나뉩니다.
+
+---
+
+## React의 장점
+
+1. 재사용성
+   컴포넌트를 만들어 애플리케이션 전반에 걸쳐 재사용할 수 있습니다.
+
+2. 유지보수 용이성
+   코드가 모듈화되어 있으므로 유지보수가 쉽습니다.
+
+3. 커뮤니티와 생태계
+   광범위한 커뮤니티와 풍부한 라이브러리/도구를 활용할 수 있습니다.
+
+4. 성능 최적화
+   가상 DOM과 React의 효율적인 렌더링 기법 덕분에 성능이 뛰어납니다.
+
+---
+
+## React의 단점
+
+1. 학습 곡선
+   JSX, 상태 관리(State Management), 훅(Hooks) 등 새로운 개념을 학습해야 합니다.
+
+2. 지속적인 업데이트
+   React와 관련된 생태계는 빠르게 변화하므로 지속적인 학습이 필요합니다.
+
+---
+
+## 간단한 사용 예제
+
+다음은 React를 사용하여 간단한 투두 리스트를 만드는 예제입니다.
+
+```javascript
+import React, { useState } from 'react';
+
+const TodoList = () => {
+  const [todos, setTodos] = useState([]);
+  const [inputValue, setInputValue] = useState('');
+
+  const addTodo = () => {
+    if (inputValue.trim() !== '') {
+      setTodos([...todos, inputValue]);
+      setInputValue('');
+    }
+  };
+
+  return (
+    <div>
+      <h1>나의 투두 리스트</h1>
+      <input
+        type="text"
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+        placeholder="할 일을 입력하세요"
+      />
+      <button onClick={addTodo}>추가</button>
+      <ul>
+        {todos.map((todo, index) => (
+          <li key={index}>{todo}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default TodoList;
+```
+
+### 코드 설명
+1. `useState` 훅: `useState`를 사용하여 투두 리스트와 입력값을 상태로 관리합니다.
+2. 상태 업데이트: `setTodos`를 통해 새로운 투두 아이템을 추가합니다.
+3. 컴포넌트 렌더링: 상태가 변경될 때마다 React는 컴포넌트를 다시 렌더링하여 UI를 업데이트합니다.
+
+---
+
+## React의 활용 사례
+
+React는 다음과 같은 다양한 애플리케이션에서 사용됩니다:
+
+- 페이스북과 인스타그램: React의 원조 개발자인 페이스북에서 내부 애플리케이션에 사용합니다.
+- Netflix: 효율적인 렌더링과 빠른 UI 반응 속도를 위해 React를 채택했습니다.
+- Airbnb: 재사용 가능한 컴포넌트를 사용하여 방대한 UI를 관리합니다.
+
+---
+
+React는 간단한 UI 구현부터 대규모 애플리케이션 개발까지 모두 적합한 도구로, 프론트엔드 개발에 있어 강력한 선택지 중 하나입니다.

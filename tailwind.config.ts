@@ -1,5 +1,4 @@
 import type { Config } from 'tailwindcss';
-import typography from '@tailwindcss/typography';
 
 export default {
   darkMode: 'class',
@@ -7,10 +6,10 @@ export default {
   theme: {
     extend: {
       height: {
-        header: '60px',
+        header: '50px',
       },
       inset: {
-        header: '60px',
+        header: '50px',
       },
       spacing: {
         xs: 'var(--spacing-xs)',
@@ -91,5 +90,5 @@ export default {
       },
     },
   },
-  plugins: [typography],
+  plugins: [],
 } satisfies Config;

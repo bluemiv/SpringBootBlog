@@ -1,4 +1,4 @@
-import { getAllPosts } from '@/feature/blog/utils/posts';
+import { getAllPosts } from '@/feature/posts/utils/posts';
 
 interface Props {
   params: Promise<{ category: string; slug: string }>;
@@ -9,7 +9,7 @@ export default async function Page(props: Props) {
   const { category, slug } = params;
   const { default: Article } = await import(`@/_posts/${category}/${slug}.mdx`);
   return (
-    <main className="mx-auto max-w-[1100px] w-full flex flex-col-reverse md:flex-row">
+    <main className="mx-auto max-w-[1100px] w-full flex flex-col-reverse md:flex-row mt-xl">
       <article className="max-w-[800px] w-full p-md">
         <Article />
       </article>
