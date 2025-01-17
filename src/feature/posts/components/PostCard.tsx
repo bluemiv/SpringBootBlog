@@ -1,8 +1,8 @@
 import dayjs from 'dayjs';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Post } from '@/feature/posts/types';
 import { ROUTE_PATH } from '@/constants/route';
+import { Post } from '../types';
 
 interface Props {
   post: Post;

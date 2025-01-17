@@ -1,8 +1,8 @@
 import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
-import { PostMeta } from '@/feature/posts/types';
 import dayjs from 'dayjs';
+import { PostMeta } from '@/feature/posts/types';
 
 const postsDirectory = path.join(process.cwd(), 'src', '_posts');
 
@@ -29,8 +29,14 @@ export function getAllPosts() {
   });
 }
 
-export function getPostBySlug(category: string, slug: string) {
+export function getPost(category: string, slug: string) {
   const fullPath = path.join(postsDirectory, category, `${slug}.mdx`);
-  const content = fs.readFileSync(fullPath, 'utf8');
-  return content;
+  const fileContents = fs.readFileSync(fullPath, 'utf8');
+  const { data: meta, content } = matter(fileContents);
+  return {
+    category,
+    slug,
+    content,
+    meta: meta as PostMeta,
+  };
 }

@@ -6,6 +6,7 @@ export type PostMeta = {
   tags: string[];
   draft?: false;
   image?: string;
+  author?: string;
 };
 
 export type Post = { category: string; slug: string; content: string; meta: PostMeta };
