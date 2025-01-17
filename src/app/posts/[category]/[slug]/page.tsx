@@ -31,7 +31,7 @@ export default async function Page(props: Props) {
             ))}
           </div>
           <div className="leading-8">
-            <div className="font-semibold">{post.meta.author} · 윙크개발팀</div>
+            <div className="font-semibold">{post.meta.author}</div>
             <div className="text-sm text-secondary">
               {dayjs(post.meta.date).format('YYYY년 M월 D일')}
             </div>

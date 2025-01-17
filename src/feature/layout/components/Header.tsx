@@ -26,20 +26,26 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="flex justify-center px-lg w-full h-header bg-bg border-b border-b-bg-secondary">
-      <div className="max-w-[1200px] w-full h-full flex items-center justify-between">
-        <Link href={ROUTE_PATH.ROOT} className="cursor-pointer font-semibold italic text-lg">
-          {process.env.NEXT_PUBLIC_APP_TITLE}
+    <header
+      className={clsx('h-header bg-bg flex items-center justify-between px-lg w-full border-b', {
+        'border-b-bg-secondary': !isOpen,
+        'border-b-transparent': isOpen,
+      })}
+    >
+      <div className="mx-auto max-w-[1200px] w-full h-full flex items-center justify-between gap-lg">
+        <Link className="italic font-semibold" href={ROUTE_PATH.ROOT}>
+          {process.env.NEXT_PUBLIC_APP_TITLE}.
         </Link>
-        <div className="flex-1 flex items-center justify-end gap-8">
-          <nav>
+        <div className="flex-1 flex items-center justify-end gap-lg">
+          <nav className="flex-1 flex justify-end">
             <ul
               className={clsx(
+                'bg-bg fixed top-header left-0 px-2xl overflow-hidden text-right w-[100vw] flex flex-col gap-lg border-b border-b-bg-secondary transition-all ease-in-out duration-150',
+                'md:static md:border-none md:p-0 md:w-auto md:h-auto md:flex-row',
                 {
-                  'right-0 h-full p-xl bg-bg': isOpen,
-                  'right-[-200vw]': !isOpen,
+                  'h-auto py-lg': isOpen,
+                  'h-0': !isOpen,
                 },
-                'w-[100vw] top-header fixed flex flex-col items-end transition-all ease-in-out duration-150 h-full md:w-full md:static md:flex-row md:items-center gap-lg',
               )}
             >
               {[
@@ -56,7 +62,7 @@ export default function Header() {
           </nav>
           <div className="flex items-center gap-sm">
             <ThemeButton />
-            <HamburgerButton isOpen={isOpen} onClick={toggleMenu} />
+            <HamburgerButton isOpen={isOpen} onClick={toggleMenu} className="md:hidden" />
           </div>
         </div>
       </div>
